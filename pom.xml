@@ -166,13 +166,9 @@
                 </requireJavaVersion>
                 <requireMavenVersion>
                   <version>[3.9.1,4.0.0)</version>
-                  <message>[version check] Maven with version 3.8.6 is required! 4.0.0 or higher is not allowed
+                  <message>[version check] Maven with version 3.8.1 is required! 4.0.0 or higher is not allowed
                   </message>
                 </requireMavenVersion>
-                <requireEnvironmentVariable>
-                  <variableName>MAVEN_HOME</variableName>
-                  <message>MAVEN_HOME not configured</message>
-                </requireEnvironmentVariable>
                 <dependencyConvergence>
                   <uniqueVersions>true</uniqueVersions>
                 </dependencyConvergence>

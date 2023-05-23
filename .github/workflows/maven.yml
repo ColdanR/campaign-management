@@ -26,8 +26,6 @@ jobs:
         java-version: '17'
         distribution: 'zulu'
         cache: maven
-    - name: Check environment
-      run: mvn -v
     - name: Setup Maven Wrapper
       run: chmod +x ./mvnw
     - name: Build with Maven
