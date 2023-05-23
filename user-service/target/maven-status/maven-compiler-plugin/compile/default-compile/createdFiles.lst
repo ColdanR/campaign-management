@@ -1,0 +1,8 @@
+de\ravenguard\campmgnt\user\entities\DatabaseException.class
+de\ravenguard\campmgnt\user\entities\UserProfile.class
+META-INF\panache-archive.marker
+de\ravenguard\campmgnt\user\entities\Gender.class
+de\ravenguard\campmgnt\user\entities\Status.class
+de\ravenguard\campmgnt\user\boundary\UserResource.class
+de\ravenguard\campmgnt\user\entities\UserProfile$UserProfileBuilder.class
+de\ravenguard\campmgnt\user\entities\NotFoundException.class

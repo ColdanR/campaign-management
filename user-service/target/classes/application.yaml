@@ -1,0 +1,6 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+  hibernate-orm:
+    jdbc:
+      timezone: UTC
