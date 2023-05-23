@@ -27,7 +27,7 @@ jobs:
         distribution: 'zulu'
         cache: maven
     - name: Check environment
-      run: print_env
+      run: printenv
     - name: Setup Maven Wrapper
       run: chmod +x ./mvnw
     - name: Build with Maven
