@@ -41,6 +41,7 @@
     <quarkus.version>3.0.1.Final</quarkus.version>
     <lombok.version>1.18.26</lombok.version>
     <!-- sonar properties -->
+    <sonar.projectKey>ColdanR_campaign-management</sonar.projectKey>
     <sonar.organization>coldanr</sonar.organization>
     <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
