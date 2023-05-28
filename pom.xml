@@ -186,12 +186,6 @@
   </build>
   <profiles>
     <profile>
-      <activation>
-        <property>
-          <name>CI</name>
-          <value>true</value>
-        </property>
-      </activation>
       <id>ci-build</id>
       <build>
         <plugins>
