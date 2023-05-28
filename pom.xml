@@ -28,6 +28,7 @@
     <maven-failsafe-plugin.version>3.1.0</maven-failsafe-plugin.version>
     <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
     <!-- plugin configuration -->
     <maven.home>${env.MAVEN_HOME}</maven.home>
     <maven.compiler.release>17</maven.compiler.release>
@@ -39,6 +40,10 @@
     <!-- dependencies version -->
     <quarkus.version>3.0.1.Final</quarkus.version>
     <lombok.version>1.18.26</lombok.version>
+    <!-- sonar properties -->
+    <sonar.projectKey>ColdanR_campaign-management</sonar.projectKey>
+    <sonar.organization>coldanr</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencyManagement>
@@ -179,4 +184,33 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <activation>
+        <property>
+          <name>CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <id>ci-build</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>${sonar-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>sonar-scan</id>
+                <goals>
+                  <goal>sonar</goal>
+                </goals>
+                <phase>verify</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
