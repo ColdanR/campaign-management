@@ -1,6 +1,17 @@
 quarkus:
   datasource:
     db-kind: postgresql
+    health:
+      enabled: true
+    metrics:
+      enabled: true
   hibernate-orm:
-    jdbc:
-      timezone: UTC
+    database:
+      generation:
+        create-schemas: true
+        halt-on-error: true
+    log:
+      format-sql: true
+      jdbc-warnings: true
+      sql: true
+      queries-slower-than-ms: 100
