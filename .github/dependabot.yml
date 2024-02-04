@@ -29,5 +29,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      github:
+        patterns:
+          - "actions/*"
 
 
