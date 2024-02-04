@@ -17,7 +17,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v4
       with:
@@ -47,3 +46,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./mvnw -B -ntp verify
+    - name: Maven Dependency Tree Dependency Submission
+      if: ${{ github.ref_name == 'main' }}
+      uses: advanced-security/maven-dependency-submission-action@v4.0.0
