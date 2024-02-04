@@ -11,6 +11,7 @@ updates:
       interval: "daily"
     groups:
       maven-updates:
+        dependency-type: "development"
         patterns:
           - "org.apache.maven.plugins:*"
           - "org.codehaus.mojo:*"
@@ -19,6 +20,7 @@ updates:
           - "io.quarkus.platform:*"
           - "io.quarkus:*"
       other-dependencies:
+        dependency-type: "production"
         exclude-patterns:
           - "io.quarkus.platform:*"
           - "io.quarkus:*"
