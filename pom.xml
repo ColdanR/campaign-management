@@ -39,7 +39,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- dependencies version -->
     <quarkus.version>3.8.3</quarkus.version>
-    <lombok.version>1.18.30</lombok.version>
+    <lombok.version>1.18.32</lombok.version>
     <!-- sonar properties -->
     <sonar.projectKey>ColdanR_campaign-management</sonar.projectKey>
     <sonar.organization>coldanr</sonar.organization>
