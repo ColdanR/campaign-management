@@ -2,6 +2,7 @@ package de.ravenguard.campmgnt.user.boundary;
 
 import de.ravenguard.campmgnt.user.entities.UserProfile;
 import io.smallrye.mutiny.Uni;
+import jakarta.annotation.security.DenyAll;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@DenyAll
 public class UserResource {
     @Path("users/{userId}")
     @NotNull
