@@ -53,7 +53,7 @@ public class UserProfile extends PanacheEntity {
     }
     return find("keyCloakId", keyCloakId).<UserProfile>singleResult()
             .onFailure(NonUniqueResultException.class)
-            .transform(e -> new DatabaseException())
+            .transform(DatabaseException::new)
             .onFailure(NoResultException.class)
             .transform(e -> new NotFoundException());
   }
@@ -61,7 +61,7 @@ public class UserProfile extends PanacheEntity {
   public static Uni<UserProfile> getByEMail(String email) {
     return find("email", email).<UserProfile>singleResult()
             .onFailure(NonUniqueResultException.class)
-            .transform(e -> new DatabaseException())
+            .transform(DatabaseException::new)
             .onFailure(NoResultException.class)
             .transform(e -> new NotFoundException());
   }

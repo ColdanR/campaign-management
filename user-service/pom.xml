@@ -8,6 +8,7 @@
     <artifactId>campaign-management</artifactId>
     <groupId>de.ravenguard.campmgnt</groupId>
     <version>${revision}${changelist}</version>
+    <path>../</path>
   </parent>
   <properties>
     <skipITs>true</skipITs>
