@@ -5,7 +5,6 @@ import de.ravenguard.campmgnt.user.entities.UserProfile;
 import io.smallrye.mutiny.Uni;
 import jakarta.annotation.security.DenyAll;
 import jakarta.inject.Inject;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;
@@ -23,14 +22,14 @@ public class UserResource {
     @Path("users/{userId}")
     @NotNull
     @GET
-    public Uni<@Valid UserProfile> getUserById(@PathParam("userId") @NotBlank String userId) {
+    public Uni<UserProfile> getUserById(@PathParam("userId") @NotBlank String userId) {
         return null;
     }
 
     @Path("users")
     @NotNull
     @POST
-    public Uni<@Valid UserProfile> registerUser(UserProfile userProfile) {
+    public Uni<UserProfile> registerUser(UserProfile userProfile) {
         return Uni.createFrom().item(userProfile);
     }
 }

@@ -3,12 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>user-service</artifactId>
-  <version>${revision}${changelist}</version>
   <parent>
     <artifactId>campaign-management</artifactId>
     <groupId>de.ravenguard.campmgnt</groupId>
     <version>${revision}${changelist}</version>
-    <path>../</path>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
     <skipITs>true</skipITs>
@@ -20,7 +19,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-reactive</artifactId>
+      <artifactId>quarkus-rest</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -44,7 +43,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
+      <artifactId>quarkus-rest-jackson</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
