@@ -15,3 +15,38 @@ quarkus:
       jdbc-warnings: true
       sql: true
       queries-slower-than-ms: 100
+  kafka:
+    devservices:
+      provider: strimzi
+      image-name: 'quay.io/strimzi-test-container/test-container:0.107.0-kafka-3.7.1'
+      topic-partitions:
+        prices-in: 3
+        prices-in2: 3
+        prices-out: 3
+        prices-out2: 3
+mp:
+  messaging:
+    connector:
+      smallrye-kafka:
+        auto:
+          offset:
+            earliest
+
+    incoming:
+      prices-in:
+        connector: smallrye-kafka
+        value:
+          deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      prices-in2:
+        connector: smallrye-kafka
+        value:
+          deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+    outgoing:
+      prices-out:
+        connector: smallrye-kafka
+        value:
+          serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      prices-out2:
+        connector: smallrye-kafka
+        value:
+          serializer: org.apache.kafka.common.serialization.IntegerSerializer

@@ -61,12 +61,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-messaging-kafka</artifactId>
-    </dependency>
-  </dependencies>
 
   <build>
     <pluginManagement>
@@ -142,7 +136,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
-        <configuration></configuration>
         <executions>
           <!-- enable flattening -->
           <execution>
