@@ -33,5 +33,10 @@ updates:
       github:
         patterns:
           - "actions/*"
+  - package-ecosystem: docker
+    directories:
+      - "/**/src/main/docker"
+    schedule:
+      interval: "daily"
 
 
