@@ -17,8 +17,7 @@ quarkus:
       queries-slower-than-ms: 100
   kafka:
     devservices:
-      provider: strimzi
-      image-name: 'quay.io/strimzi-test-container/test-container:0.107.0-kafka-3.7.1'
+      provider: STRIMZI
       topic-partitions:
         prices-in: 3
         prices-in2: 3
@@ -29,9 +28,7 @@ mp:
     connector:
       smallrye-kafka:
         auto:
-          offset:
-            earliest
-
+          offset: earliest
     incoming:
       prices-in:
         connector: smallrye-kafka

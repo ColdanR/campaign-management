@@ -28,8 +28,7 @@
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
     <!-- plugin configuration -->
-    <maven.home>${env.MAVEN_HOME}</maven.home>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
@@ -168,12 +167,12 @@
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>17</version>
-                  <message>[version check] Java Version 17 is required!</message>
+                  <version>21</version>
+                  <message>[version check] Java Version 21 is required!</message>
                 </requireJavaVersion>
                 <requireMavenVersion>
                   <version>[3.9.1,4.0.0)</version>
-                  <message>[version check] Maven with version 3.8.1 is required! 4.0.0 or higher is not allowed</message>
+                  <message>[version check] Maven with version 3.9.1 is required! 4.0.0 or higher is not allowed</message>
                 </requireMavenVersion>
                 <dependencyConvergence>
                   <uniqueVersions>true</uniqueVersions>
