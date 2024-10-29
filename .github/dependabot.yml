@@ -34,7 +34,8 @@ updates:
         patterns:
           - "actions/*"
   - package-ecosystem: docker
-    directory: /
+    directories:
+      - "/**/src/main/docker"
     schedule:
       interval: "daily"
 
