@@ -7,22 +7,23 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response.Status;
 
-@Path("/")
+@Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
-    @Path("users/{userId}")
+    @Path("/{userId}")
     @NotNull
     @GET
-    public Uni<@Valid UserProfile> getUserById(@PathParam("userId") @NotBlank String userId) {
-        return null;
+    public Uni<UserProfile> getUserById(@PathParam("userId") @NotBlank String userId) {
+        return Uni.createFrom().failure(new WebApplicationException(Status.NOT_IMPLEMENTED));
     }
 
-    @Path("users")
+    @Path("/")
     @NotNull
     @POST
-    public Uni<@Valid UserProfile> registerUser(UserProfile userProfile) {
-        return Uni.createFrom().item(userProfile);
+    public Uni<UserProfile> registerUser(@Valid UserProfile userProfile) {
+        return Uni.createFrom().failure(new WebApplicationException(Status.NOT_IMPLEMENTED));
     }
 }
