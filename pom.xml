@@ -32,7 +32,6 @@
     <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
 
     <!-- plugin configuration -->
-    <maven.home>${env.MAVEN_HOME}</maven.home>
     <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
