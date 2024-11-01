@@ -14,6 +14,7 @@
     <!-- version control -->
     <revision>1.0.0</revision>
     <changelist>-SNAPSHOT</changelist>
+    
     <!-- plugin versions -->
     <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
@@ -27,6 +28,7 @@
     <maven-surefire-plugin.version>3.5.1</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
+
     <!-- plugin configuration -->
     <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
@@ -34,14 +36,17 @@
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     <!-- dependencies version -->
-    <quarkus.version>3.15.1</quarkus.version>
+    <quarkus.version>3.16.1</quarkus.version>
     <lombok.version>1.18.34</lombok.version>
+
     <!-- sonar properties -->
     <sonar.projectKey>ColdanR_campaign-management</sonar.projectKey>
     <sonar.organization>coldanr</sonar.organization>
     <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>target/jacoco-report/*.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 
   <dependencyManagement>
@@ -171,8 +176,9 @@
                   <message>[version check] Java Version 21 is required!</message>
                 </requireJavaVersion>
                 <requireMavenVersion>
-                  <version>[3.9.1,4.0.0)</version>
-                  <message>[version check] Maven with version 3.9.1 is required! 4.0.0 or higher is not allowed</message>
+                  <version>[3.9.9,4.0.0)</version>
+                  <message>[version check] Maven with version 3.9.9 is required! 4.0.0 or higher is not allowed
+                  </message>
                 </requireMavenVersion>
                 <dependencyConvergence>
                   <uniqueVersions>true</uniqueVersions>
