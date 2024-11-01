@@ -10,6 +10,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 @Builder
@@ -18,38 +19,39 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
+@Table(name = "USER_PROFILE")
 public class UserProfile extends PanacheEntity {
   @NotNull
-  @Column(nullable = false)
+  @Column(name = "BIRTHDAY", nullable = false)
   LocalDate birthday;
   @Email
   @NotBlank
-  @Column(unique = true, nullable = false)
+  @Column(name = "EMAIL", unique = true, nullable = false)
   String email;
   @NotNull
-  @Column(nullable = false)
+  @Column(name = "GENDER", nullable = false)
   @Enumerated(EnumType.STRING)
   Gender gender;
   @NotNull
-  @Column(unique = true, nullable = false)
+  @Column(name = "KEYCLOAK_ID", unique = true, nullable = false)
   UUID keyCloakId;
   @NotNull
-  @Column(nullable = false)
+  @Column(name = "LAST_MODIFIED_TS", nullable = false)
   ZonedDateTime updatedAt;
   @NotNull
-  @Column(nullable = false)
+  @Column(name = "REGISTERED_TS", nullable = false)
   ZonedDateTime registered;
   @NotBlank
-  @Column(unique = true, nullable = false)
+  @Column(name = "USERNAME", unique = true, nullable = false)
   String userName;
-  @Column(nullable = false)
+  @Column(name = "STATUS", nullable = false)
   @Enumerated(EnumType.STRING)
   @NotNull
   Status status;
 
   public static Uni<UserProfile> getByKeyCloakId(UUID keyCloakId) {
-    if (keyCloakId == null) {
-      throw new NullPointerException("keyCloakId may not be null");
+    if (Objects.isNull(keyCloakId)) {
+      return Uni.createFrom().failure(new NullPointerException("Parameter 'keyCloakId' may not be null!"));
     }
     return find("keyCloakId", keyCloakId).<UserProfile>singleResult()
             .onFailure(NonUniqueResultException.class)
@@ -59,6 +61,9 @@ public class UserProfile extends PanacheEntity {
   }
 
   public static Uni<UserProfile> getByEMail(String email) {
+    if (Objects.isNull(email)) {
+      return Uni.createFrom().failure(new NullPointerException("Parameter 'email' may not be null!"));
+    }
     return find("email", email).<UserProfile>singleResult()
             .onFailure(NonUniqueResultException.class)
             .transform(DatabaseException::new)

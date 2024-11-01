@@ -1,34 +1,19 @@
 quarkus:
   datasource:
     db-kind: postgresql
-    health:
-      enabled: true
     metrics:
       enabled: true
   hibernate-orm:
-    database:
-      generation:
-        create-schemas: true
-        halt-on-error: true
     log:
-      format-sql: true
-      jdbc-warnings: true
-      sql: true
       queries-slower-than-ms: 100
-  kafka:
-    devservices:
-      provider: STRIMZI
-      topic-partitions:
-        prices-in: 3
-        prices-in2: 3
-        prices-out: 3
-        prices-out2: 3
 mp:
   messaging:
     connector:
       smallrye-kafka:
         auto:
-          offset: earliest
+          offset:
+            reset: earliest
+        propagate-record-key: true
     incoming:
       prices-in:
         connector: smallrye-kafka

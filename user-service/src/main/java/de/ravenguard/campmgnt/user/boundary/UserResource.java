@@ -5,6 +5,7 @@ import de.ravenguard.campmgnt.user.entities.UserProfile;
 import io.smallrye.mutiny.Uni;
 import jakarta.annotation.security.DenyAll;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;
@@ -20,7 +21,7 @@ public class UserResource {
     @Inject
     RegisterService registerService;
 
-    @Path("users/{userId}")
+    @Path("/{userId}")
     @NotNull
     @GET
     public Uni<UserProfile> getUserById(@PathParam("userId") @NotBlank String userId) {

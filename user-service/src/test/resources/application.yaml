@@ -1,0 +1,22 @@
+quarkus:
+  hibernate-orm:
+    database:
+      generation:
+        create-schemas: true
+        halt-on-error: true
+    log:
+      format-sql: true
+      jdbc-warnings: true
+      sql: true
+      queries-slower-than-ms: 100
+  kafka:
+    devservices:
+      provider: STRIMZI
+      topic-partitions:
+        prices-in: 1
+        prices-in2: 1
+        prices-out: 1
+        prices-out2: 1
+  otel:
+    sdk:
+      disabled: true
