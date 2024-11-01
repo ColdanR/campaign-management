@@ -17,7 +17,6 @@ import jakarta.ws.rs.core.Response.Status;
 @Produces(MediaType.APPLICATION_JSON)
 @DenyAll
 public class UserResource {
-
     @Inject
     RegisterService registerService;
 
