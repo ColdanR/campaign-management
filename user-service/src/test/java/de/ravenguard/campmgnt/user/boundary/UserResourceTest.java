@@ -24,8 +24,6 @@ class UserResourceTest {
     void getUserById_not_implemented() {
         given()
                 .pathParam("userId", "test")
-                .log()
-                .all()
                 .when()
                 .get("{userId}")
                 .then()
@@ -35,8 +33,6 @@ class UserResourceTest {
     @Test
     void registerUser_not_implemented() {
         given()
-                .log()
-                .all()
                 .body(
                         UserProfile.builder()
                                 .birthday(LocalDate.now())
