@@ -13,7 +13,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.vertx.RunOnVertxContext;
 
 @QuarkusTest
-public class UserProfileTest {
+class UserProfileTest {
     private static final UUID USER_ID = UUID.fromString("8c7af4c3-5295-4766-a527-453d6fbe33ec");
     private static final String EMAIL = "exists@test.com";
 
