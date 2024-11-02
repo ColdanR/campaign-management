@@ -2,8 +2,6 @@ package de.ravenguard.campmgnt.user.boundary;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.Duration;
-
 import org.apache.kafka.clients.consumer.OffsetResetStrategy;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.Test;
@@ -17,7 +15,7 @@ import io.smallrye.reactive.messaging.kafka.companion.KafkaCompanion;
 
 @QuarkusTest
 @QuarkusTestResource(KafkaCompanionResource.class)
-public class MessageListenerTest {
+class MessageListenerTest {
 
   @InjectKafkaCompanion
   KafkaCompanion companion;
@@ -34,9 +32,9 @@ public class MessageListenerTest {
     
     var list = orders.getRecords();
     for (var i = 0; i < list.size(); i++) {
-      var record = list.get(i);
-      assertEquals(i * 2, record.value());
-      assertEquals("key" + i, record.key());
+      var orderRecord = list.get(i);
+      assertEquals(i * 2, orderRecord.value());
+      assertEquals("key" + i, orderRecord.key());
     }
   }
 
@@ -53,9 +51,9 @@ public class MessageListenerTest {
     var list = orders.getRecords();
     list.sort((i, j) -> Integer.compare(i.value(), j.value()));
     for (var i = 0; i < list.size(); i++) {
-      var record = list.get(i);
-      assertEquals(i + 1, record.value());
-      assertEquals("key" + i, record.key());
+      var orderRecord = list.get(i);
+      assertEquals(i + 1, orderRecord.value());
+      assertEquals("key" + i, orderRecord.key());
     }
   }
 }
