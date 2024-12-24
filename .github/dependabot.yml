@@ -19,7 +19,6 @@ updates:
           - "io.quarkus.platform:*"
           - "io.quarkus:*"
       other-dependencies:
-        dependency-type: "production"
         exclude-patterns:
           - "io.quarkus.platform:*"
           - "io.quarkus:*"
