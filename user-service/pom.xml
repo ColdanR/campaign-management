@@ -7,7 +7,7 @@
   <parent>
     <artifactId>campaign-management</artifactId>
     <groupId>de.ravenguard.campmgnt</groupId>
-    <version>${revision}${changelist}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
@@ -109,6 +109,7 @@
               <goal>build</goal>
               <goal>generate-code</goal>
               <goal>generate-code-tests</goal>
+              <goal>native-image-agent</goal>
             </goals>
           </execution>
         </executions>
@@ -116,9 +117,14 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <compilerArgs>
-            <arg>-parameters</arg>
-          </compilerArgs>
+          <parameters>true</parameters>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
