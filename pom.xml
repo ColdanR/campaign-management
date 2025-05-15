@@ -34,7 +34,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- dependencies version -->
-    <quarkus.version>3.22.2</quarkus.version>
+    <quarkus.version>3.22.3</quarkus.version>
     <lombok.version>1.18.38</lombok.version>
 
     <!-- sonar properties -->
