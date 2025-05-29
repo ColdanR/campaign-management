@@ -16,6 +16,11 @@ on:
     
 jobs:
   build:
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -40,10 +45,27 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     - name: Build with Maven
+      id: build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./mvnw -B -ntp verify
+    - name: Publish test results
+      uses: dorny/test-reporter@v2
+      with:
+        name: JUnit Test Results
+        path: '**/target/surefire-reports/*.xml'
+        reporter: java-junit
+    - name: Add coverage report to PR
+      uses: madrapps/jacoco-report@v1.7.2
+      with:
+        paths: |
+          ${{ github.workspace }}/**/target/jacoco-report/jacoco.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 80
+        min-coverage-changed-files: 80
+        update-comment: true
+        comment-type: both
   dependency-report:
     runs-on: ubuntu-latest
     permissions:
