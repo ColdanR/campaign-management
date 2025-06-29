@@ -2,7 +2,6 @@ package de.ravenguard.campmgnt.user.boundary;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.apache.kafka.clients.consumer.OffsetResetStrategy;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +25,6 @@ class MessageListenerTest {
 
     ConsumerTask<String, Integer> orders = companion.consumeIntegers()
         .withAutoCommit()
-        .withOffsetReset(OffsetResetStrategy.EARLIEST)
         .fromTopics("prices-out", 10);
     orders.awaitRecords(10);
     
@@ -44,7 +42,6 @@ class MessageListenerTest {
 
     ConsumerTask<String, Integer> orders = companion.consumeIntegers()
         .withAutoCommit()
-        .withOffsetReset(OffsetResetStrategy.EARLIEST)
         .fromTopics("prices-out2", 10);
     orders.awaitRecords(10);
 
