@@ -6,8 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
-
+name: build
 on:
   push:
     branches: [ "main" ]
@@ -31,7 +30,6 @@ jobs:
       with:
         java-version: '21'
         distribution: 'zulu'
-        cache: maven
     - name: Cache SonarCloud packages
       uses: actions/cache@v4
       with:
@@ -50,23 +48,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./mvnw -B -ntp verify
-    - name: Publish test results
-      uses: dorny/test-reporter@v2
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v4
+      if: always() # always run even if the previous step fails
       with:
-        name: JUnit Test Results
-        path: '**/target/surefire-reports/*.xml'
-        reporter: java-junit
-    - name: Add coverage report to PR
-      uses: madrapps/jacoco-report@v1.7.2
-      with:
-        paths: |
-          ${{ github.workspace }}/**/target/jacoco-report/jacoco.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 80
-        min-coverage-changed-files: 80
-        title: Code Coverage
-        update-comment: true
-        comment-type: both
+        name: junit-test-results
+        path: |
+          **/target/surefire-reports/TEST-*.xml
+          **/target/jacoco-report/jacoco.xml
+        retention-days: 1
   dependency-report:
     runs-on: ubuntu-latest
     permissions:

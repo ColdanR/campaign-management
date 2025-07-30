@@ -51,3 +51,54 @@ If you want to learn more about building native executables, please consult http
 
 - REST resources for Hibernate Reactive with Panache ([guide](https://quarkus.io/guides/rest-data-panache)): Generate JAX-RS resources for your Hibernate Panache entities and repositories
 - Reactive PostgreSQL client ([guide](https://quarkus.io/guides/reactive-sql-clients)): Connect to the PostgreSQL database using the reactive pattern
+---
+> **Inquisitio Imperialis – Mandatum Hereticus**
+
+---
+
+**Datum:** 814.M41  
+**Dekretnummer:** 6493-Θ-Epsilon  
+**Geheime Ablage:** Ordo Hereticus / Segmentum Obscurus / Rubycon-System  
+**Urheber:** Inquisitor Rexan Halbrecht, Mandatum Operantis, Ordo Hereticus
+
+---
+
+**Subjekt der Untersuchung:**  
+**Aleksandr von Nachtvalen**  
+Registrierter Freihändler, Träger des Freihandelsbriefs FHN-VN817-R, Befehlshaber der *Velum Tenebris*
+
+---
+
+**Anklagepunkte:**
+
+1. **Widerstand gegen imperiale Autorität** – Missachtung direkter Befehle eines autorisierten Inquisitors der Ordo Hereticus.  
+2. **Verweigerung der Artefaktübergabe** – Zurückhaltung und Abschottung mehrerer gefährlicher Relikte mit vermuteter Warp-Signatur.  
+3. **Verdacht auf Handelsbeziehungen mit Chaos-affinen Entitäten** – Unerlaubte Interaktionen mit Individuen oder Organisationen außerhalb imperialer Legitimation, inkl. möglicher Transaktionen mit ketzerischem Ursprung.
+
+---
+
+**Urteil:**  
+Gemäß den Bestimmungen des Codex *Haereticae Pravitatis* und der Konventionen des Calixian Conclave wird das Subjekt **Aleksandr von Nachtvalen** mit dem Status:
+
+> **Hereticus Decretum – Classificatio: Hereticus Extremis**  
+> **Excommunicate Traitoris**
+
+belegt.
+
+Der Freihandelsbrief FHN-VN817-R wird hiermit für **ungültig erklärt**. Die *Velum Tenebris* ist ab sofort **imperiale Zielmarkierung**. Alle Ressourcen und Verbündeten unterliegen inquisitorialer Konfiskation.
+
+---
+
+**Direktive an Kill-Team „Nachtvalen“:**  
+Im Einklang mit der Vollstreckungsgewalt des Ordo Hereticus wird euch hiermit der Befehl erteilt, das Subjekt **Aleksandr von Nachtvalen** **umgehend zu inhaftieren**. Die Wahrung imperialer Sicherheit erfordert entschlossenes Handeln. Die geistliche Reinigung obliegt den Konventionen des Examinatoriums.
+
+> Missachtung dieses Befehls wird als Heresy Secunda gewertet.
+
+---
+
+**Unterschrift:**  
+**Inquisitor Rexan Halbrecht**  
+Träger der Flamme des Imperators  
+Gezeichnet in Blut und Glauben
+
+**Siegel:** ☩
