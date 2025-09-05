@@ -35,7 +35,7 @@
 
     <!-- dependencies version -->
     <quarkus.version>3.26.2</quarkus.version>
-    <lombok.version>1.18.38</lombok.version>
+    <lombok.version>1.18.40</lombok.version>
 
     <!-- sonar properties -->
     <sonar.projectKey>ColdanR_campaign-management</sonar.projectKey>
