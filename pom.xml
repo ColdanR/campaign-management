@@ -23,7 +23,7 @@
     <maven-failsafe-plugin.version>3.5.6</maven-failsafe-plugin.version>
     <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
     <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
-    <sonar-maven-plugin.version>5.6.0.6792</sonar-maven-plugin.version>
+    <sonar-maven-plugin.version>5.7.0.6970</sonar-maven-plugin.version>
 
     <!-- plugin configuration -->
     <maven.compiler.release>21</maven.compiler.release>
@@ -34,7 +34,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- dependencies version -->
-    <quarkus.version>3.36.0</quarkus.version>
+    <quarkus.version>3.37.0</quarkus.version>
     <lombok.version>1.18.46</lombok.version>
 
     <!-- sonar properties -->
